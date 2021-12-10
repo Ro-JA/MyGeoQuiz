@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/question_text_view"
-        tools:text="@string/question_australia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:padding="24dp" />
+        android:gravity="center"
+        android:padding="24dp"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/text_size"
+        tools:text="@string/question_australia" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center_vertical|center_horizontal">
 
         <Button
             android:id="@+id/true_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="@dimen/width_button"
+            android:layout_height="@dimen/height_button"
             android:text="@string/true_button" />
 
         <Button
             android:id="@+id/false_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="@dimen/width_button"
+            android:layout_height="@dimen/height_button"
             android:text="@string/false_button" />
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/height_button"
+        android:layout_gravity="bottom|left"
+        android:contentDescription="@string/back_button"
+        android:padding="@dimen/padding_button"
+        android:src="@drawable/arrow_left" />
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/height_button"
         android:layout_gravity="bottom|right"
-        android:drawableEnd="@drawable/arrow_right"
-        android:drawablePadding="4dp"
-        android:text="@string/next_button" />
+        android:contentDescription="@string/next_button"
+        android:padding="@dimen/padding_button"
+        android:src="@drawable/arrow_right" />
+
 
 </FrameLayout>
