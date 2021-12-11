@@ -9,9 +9,12 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.bignerdranch.android.geoquiz.Question
+import com.bignerdranch.android.geoquiz.com.QuizViewModel
 
 private const val TAG = "MainActivity"
+private const val KEY_INDEX = "index"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var trueButton: Button
@@ -35,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate(Bundle?) Снежная замять крутит бойко,")
         setContentView(R.layout.activity_main)
+
+        val provider: ViewModelProvider = ViewModelProvider(this)
+        val quizViewModel = provider.get(QuizViewModel::class.java)
+
+        Log.d(TAG, "Got a QuizViewModel: $quizViewModel ")
 
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
