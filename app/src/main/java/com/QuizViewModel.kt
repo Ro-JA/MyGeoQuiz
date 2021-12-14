@@ -11,6 +11,7 @@ class QuizViewModel : ViewModel() {
 
     var currentIndex = 0
 
+
     private val questionBank = listOf(
         Question(R.string.question_australia, true),
         Question(R.string.question_oceans, true),
@@ -31,7 +32,11 @@ class QuizViewModel : ViewModel() {
     }
 
     fun moveToBack() {
-        currentIndex = (currentIndex - 1) % questionBank.size
+        if (currentIndex > 0) {
+            currentIndex = (currentIndex - 1) % questionBank.size
+        } else {
+            currentIndex = questionBank.size - 1
+        }
     }
-
 }
+
