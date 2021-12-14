@@ -1,11 +1,10 @@
 package com.bignerdranch.android.geoquiz.com
 
-import android.util.Log
+
 import androidx.lifecycle.ViewModel
 import com.bignerdranch.android.geoquiz.Question
 import com.bignerdranch.android.mygeoquiz.R
 
-private const val TAG = "QuizViewModel"
 
 class QuizViewModel : ViewModel() {
 
@@ -32,10 +31,10 @@ class QuizViewModel : ViewModel() {
     }
 
     fun moveToBack() {
-        if (currentIndex > 0) {
-            currentIndex = (currentIndex - 1) % questionBank.size
+        currentIndex = if (currentIndex > 0) {
+            (currentIndex - 1) % questionBank.size
         } else {
-            currentIndex = questionBank.size - 1
+            questionBank.size - 1
         }
     }
 }

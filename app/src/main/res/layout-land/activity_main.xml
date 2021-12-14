@@ -2,7 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="MergeRootFrame">
 
     <TextView
         android:id="@+id/question_text_view"
@@ -39,7 +40,7 @@
         android:id="@+id/next_button"
         android:layout_width="@dimen/width_button"
         android:layout_height="@dimen/height_button"
-        android:layout_gravity="bottom|left"
+        android:layout_gravity="bottom|start"
         android:contentDescription="@string/back_button"
         android:padding="@dimen/padding_button"
         android:src="@drawable/arrow_left" />
@@ -48,7 +49,7 @@
         android:id="@+id/back_button"
         android:layout_width="@dimen/width_button"
         android:layout_height="@dimen/height_button"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:contentDescription="@string/next_button"
         android:padding="@dimen/padding_button"
         android:src="@drawable/arrow_right" />

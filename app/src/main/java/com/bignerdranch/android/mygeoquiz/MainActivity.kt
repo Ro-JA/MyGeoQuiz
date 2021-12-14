@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.bignerdranch.android.geoquiz.com.QuizViewModel
 
 
+
 private const val TAG = "MainActivity"
 private const val KEY_INDEX = "index"
 
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate(Bundle?) called");
+        Log.d(TAG, "onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
         val provider: ViewModelProvider = ViewModelProvider(this)
