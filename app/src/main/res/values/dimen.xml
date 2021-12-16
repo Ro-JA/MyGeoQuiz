@@ -4,4 +4,5 @@
     <dimen name="width_button">100dp</dimen>
     <dimen name="text_size">25sp</dimen>
     <dimen name="padding_button">4dp</dimen>
+    <dimen name="padding_tv_cheatactivity">24dp</dimen>
 </resources>
