@@ -3,6 +3,7 @@ package com.bignerdranch.android.mygeoquiz
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -10,7 +11,6 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.bignerdranch.android.geoquiz.com.QuizViewModel
-
 
 
 private const val TAG = "MainActivity"
@@ -114,7 +114,9 @@ class MainActivity : AppCompatActivity() {
         } else {
             R.string.incorrect_toast
         }
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
-            .show()
+
+        val toast = Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.TOP, 0, 0)
+        toast.show()
     }
 }
