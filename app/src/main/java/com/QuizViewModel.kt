@@ -9,6 +9,7 @@ import com.bignerdranch.android.mygeoquiz.R
 class QuizViewModel : ViewModel() {
 
     var currentIndex = 0
+    var isCheater = false
 
 
     private val questionBank = listOf(
