@@ -12,6 +12,7 @@ import android.widget.TextView
 const val EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.mygeoquiz.answer_shown"
 private const val EXTRA_ANSWER_IS_TRUE =
     "com.bignerdranch.android.mygeoquiz.answer_is_true"
+private const val KEY_WAS_CHEATED = "com.bignerdranch.android.mygeoquiz.was_cheated"
 
 class CheatActivity : AppCompatActivity() {
 
