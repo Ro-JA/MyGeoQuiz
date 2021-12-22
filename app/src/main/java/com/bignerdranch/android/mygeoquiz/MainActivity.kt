@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
-        val provider: ViewModelProvider = ViewModelProvider(this)
+        val provider: ViewModelProvider = ViewModelProviders.of(this)
         val quizViewModel = provider.get(QuizViewModel::class.java)
 
         Log.d(TAG, "Got a QuizViewModel: $quizViewModel ")
@@ -81,9 +82,11 @@ class MainActivity : AppCompatActivity() {
         updateQuestion()
     }
 
-    override fun onActivityResult(requestCode: Int,
-                                  resultCode: Int,
-                                  data: Intent?) {
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?
+    ) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode != Activity.RESULT_OK) {
