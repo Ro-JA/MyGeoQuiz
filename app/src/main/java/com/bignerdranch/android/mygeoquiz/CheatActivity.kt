@@ -13,6 +13,8 @@ const val EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown"
 private const val EXTRA_ANSWER_IS_TRUE =
     "com.bignerdranch.android.geoquiz.answer_is_true"
 
+private const val KEY_WAS_CHEATED = "was cheated"
+
 class CheatActivity : AppCompatActivity() {
 
     private lateinit var answerTextView: TextView
