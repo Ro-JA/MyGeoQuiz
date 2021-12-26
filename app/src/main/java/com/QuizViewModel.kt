@@ -1,8 +1,9 @@
-package com.bignerdranch.android.geoquiz.com
+package com.bignerdranch.android.mygeoquiz.com
 
 
 import androidx.lifecycle.ViewModel
-import com.bignerdranch.android.geoquiz.Question
+
+import com.bignerdranch.android.mygeoquiz.Question
 import com.bignerdranch.android.mygeoquiz.R
 
 

@@ -6,14 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.view.View
+
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.bignerdranch.android.geoquiz.com.QuizViewModel
+
+import com.bignerdranch.android.mygeoquiz.com.QuizViewModel
 
 
 private const val TAG = "MainActivity"
