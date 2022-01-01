@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var backButton: ImageButton
     private lateinit var questionTextView: TextView
     private lateinit var cheatButton: Button
+    var cheatedList = mutableListOf<Int>()
 
     private val quizViewModel: QuizViewModel by lazy {
         ViewModelProviders.of(this).get(QuizViewModel::class.java)
