@@ -1,6 +1,7 @@
 package com.bignerdranch.android.mygeoquiz
 
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -78,6 +79,8 @@ class MainActivity : AppCompatActivity() {
         cheatButton.setOnClickListener {
             val answerIsTrue = quizViewModel.currentQuestionAnswer
             val intent = CheatActivity.newIntent(this@MainActivity, answerIsTrue)
+            val options = ActivityOptions
+                .makeClipRevealAnimation(view, 0, 0, view.width, view.height)
             startActivityForResult(intent, REQUEST_CODE_CHEAT)
         }
 
