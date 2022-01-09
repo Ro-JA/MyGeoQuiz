@@ -3,6 +3,7 @@ package com.bignerdranch.android.mygeoquiz
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -20,6 +21,7 @@ class CheatActivity : AppCompatActivity() {
 
     private lateinit var answerTextView: TextView
     private lateinit var showAnswerButton: Button
+    private lateinit var apiLevel: TextView
 
     private var answerIsTrue = false
     private var wasCheated = false
@@ -28,8 +30,13 @@ class CheatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cheat)
 
+        apiLevel = findViewById(R.id.api_level_text_view)
+        val buildingNumber = Build.VERSION.SDK_INT.toString()
+        apiLevel.text = "API Level $buildingNumber"
+
         wasCheated = savedInstanceState?.getBoolean(KEY_WAS_CHEATED, false) ?: false
         setAnswerShownResult(wasCheated)
+
 
 
         answerIsTrue = intent.getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false)
