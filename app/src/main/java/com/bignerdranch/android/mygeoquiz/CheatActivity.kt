@@ -32,7 +32,7 @@ class CheatActivity : AppCompatActivity() {
 
         apiLevel = findViewById(R.id.api_level_text_view)
         val buildingNumber = Build.VERSION.SDK_INT.toString()
-        apiLevel.text = "API Level $buildingNumber"
+        apiLevel.text = getString(R.string.api_level, buildingNumber)
 
         wasCheated = savedInstanceState?.getBoolean(KEY_WAS_CHEATED, false) ?: false
         setAnswerShownResult(wasCheated)
