@@ -14,6 +14,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
+import android.widget.Toast.makeText
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         val provider: ViewModelProvider = ViewModelProviders.of(this)
         val quizViewModel = provider.get(QuizViewModel::class.java)
+        var tokens = 3
 
         Log.d(TAG, "Got a QuizViewModel: $quizViewModel ")
 
@@ -80,6 +83,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         cheatButton.setOnClickListener { view ->
+            if(tokens <= 0 && tokens != 0) {
+                tokens -= 1
+                makeText(this,"Cheat remainig $tokens", LENGTH_SHORT).show()
+                Log.d("TAG", "TOKENS $tokens")
+            }
             val answerIsTrue = quizViewModel.currentQuestionAnswer
             val intent = CheatActivity.newIntent(this@MainActivity, answerIsTrue)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -89,6 +97,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 startActivityForResult(intent, REQUEST_CODE_CHEAT)
             }
+
         }
 
         updateQuestion()
